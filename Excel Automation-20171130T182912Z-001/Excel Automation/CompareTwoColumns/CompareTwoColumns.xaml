@@ -1,0 +1,126 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="CompareTwoColumns" sap:VirtualizedContainerService.HintSize="654,1257" mva:VisualBasic.Settings="Assembly references and imported namespaces for internal implementation"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System"
+ xmlns:si="clr-namespace:System.IO;assembly=mscorlib"
+ xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
+ xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation"
+ xmlns:snm="clr-namespace:System.Net.Mail;assembly=System"
+ xmlns:sx="clr-namespace:System.Xml;assembly=System.Xml"
+ xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Xml.Linq"
+ xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml"
+ xmlns:ua="clr-namespace:UiPath.Activities;assembly=UiPath.Activities"
+ xmlns:ul="clr-namespace:UiPath.Library;assembly=UiPath.Library"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Flowchart DisplayName="Main" sap:VirtualizedContainerService.HintSize="614,1217">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:String" Name="stringReadWorkbookCell1" />
+      <Variable x:TypeArguments="sd:DataTable" Name="celula" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="rownumber" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <x:Double x:Key="Height">1181.02</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,134.5</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,134.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,185.5 300,244.02</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ua:ReadCellsRange ContinueOnError="{x:Null}" DesignerSelector="{x:Null}" ElementPosition="{x:Null}" ExistingWorkbook="{x:Null}" InformativeScreenshot="{x:Null}" Password="{x:Null}" DataTable="[celula]" DisplayName="Excel to DataTable" sap:VirtualizedContainerService.HintSize="200,51" IncludeColumnNames="False" SheetName="Sheet1" WorkbookPath="columns.xlsx">
+          <ua:ReadCellsRange.Range>
+            <InArgument x:TypeArguments="x:String">
+              <Literal x:TypeArguments="x:String" Value="" />
+            </InArgument>
+          </ua:ReadCellsRange.Range>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ua:ReadCellsRange>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">200,244.02</av:Point>
+                <av:Size x:Key="ShapeSize">200,51</av:Size>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ua:ForEach x:TypeArguments="sd:DataRow" DisplayName="For Each Row in DataTable" sap:VirtualizedContainerService.HintSize="200,51" Values="[celula.Rows]">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ActivityAction x:TypeArguments="sd:DataRow">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1014,555">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:String" Name="output" />
+                    <Variable x:TypeArguments="x:String" Name="variable1" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If Condition="[cint(row(0)) = cint(row(1))]" sap:VirtualizedContainerService.HintSize="992,331">
+                    <If.Then>
+                      <ua:WriteWorkbookCell ContinueOnError="{x:Null}" DesignerSelector="{x:Null}" ElementPosition="{x:Null}" ExistingWorkbook="{x:Null}" InformativeScreenshot="{x:Null}" Password="{x:Null}" Cell="[&quot;C&quot; +rownumber.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="314,115" SheetName="Sheet1" Text="=" WorkbookPath="columns.xlsx" />
+                    </If.Then>
+                    <If.Else>
+                      <If Condition="[cint(row(0)) &gt; cint(row(1))]" sap:VirtualizedContainerService.HintSize="653,223">
+                        <If.Then>
+                          <ua:WriteWorkbookCell ContinueOnError="{x:Null}" DesignerSelector="{x:Null}" ElementPosition="{x:Null}" ExistingWorkbook="{x:Null}" InformativeScreenshot="{x:Null}" Password="{x:Null}" Cell="[&quot;C&quot; +rownumber.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="314,115" SheetName="Sheet1" Text="a" WorkbookPath="columns.xlsx" />
+                        </If.Then>
+                        <If.Else>
+                          <ua:WriteWorkbookCell ContinueOnError="{x:Null}" DesignerSelector="{x:Null}" ElementPosition="{x:Null}" ExistingWorkbook="{x:Null}" InformativeScreenshot="{x:Null}" Password="{x:Null}" Cell="[&quot;C&quot; +rownumber.ToString]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="314,115" SheetName="Sheet1" Text="b" WorkbookPath="columns.xlsx" />
+                        </If.Else>
+                      </If>
+                    </If.Else>
+                  </If>
+                  <Assign sap:VirtualizedContainerService.HintSize="992,60">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[rownumber]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[rownumber + 1]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </ActivityAction>
+            </ua:ForEach>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+  </Flowchart>
+</Activity>

@@ -1,0 +1,23 @@
+13:53:12:554 => [WARNING] [UiPath.Workflow.Logging.StudioTraceListener] [11] SharpSvn.SvnInvalidNodeKindException: 'D:\DOWNLOADS\UIPATH SAMPLES\AutomationChallenge1\AutomationChallenge1' is not a working copy
+   at SharpSvn.SvnClientArgs.HandleResult(SvnClientContext client, SvnException error, Object targets)
+   at SharpSvn.SvnClientArgs.HandleResult(SvnClientContext client, svn_error_t* error, Object targets)
+   at SharpSvn.SvnClient.Status(String path, SvnStatusArgs args, EventHandler`1 statusHandler)
+   at SharpSvn.SvnClient.GetStatus(String path, SvnStatusArgs args, Collection`1& statuses)
+   at UiPath.Project.SourceControl.SVNSourceControl.<>c__DisplayClass53_1.<GetSvnStatus>b__0()
+   at UiPath.Project.SourceControl.SVNSourceControl.SVNClientAction(Func`1 action)
+   at UiPath.Project.SourceControl.SVNSourceControl.GetSvnStatus(String path)
+13:53:12:558 => [WARNING] [UiPath.Workflow.Logging.StudioTraceListener] [11] SharpSvn.SvnInvalidNodeKindException: 'D:\DOWNLOADS\UIPATH SAMPLES\AutomationChallenge1\AutomationChallenge1' is not a working copy directory
+   at SharpSvn.SvnClientArgs.HandleResult(SvnClientContext client, SvnException error, Object targets)
+   at SharpSvn.SvnClientArgs.HandleResult(SvnClientContext client, svn_error_t* error, Object targets)
+   at SharpSvn.SvnClient.CleanUp(String path, SvnCleanUpArgs args)
+   at UiPath.Project.SourceControl.SVNSourceControl.<CleanUpWorkspace>b__47_0()
+   at UiPath.Project.SourceControl.SVNSourceControl.SVNClientAction(Func`1 action)
+   at UiPath.Project.SourceControl.SVNSourceControl.CleanUpWorkspace()
+13:53:12:560 => [WARNING] [UiPath.Workflow.Logging.StudioTraceListener] [11] SharpSvn.SvnInvalidNodeKindException: 'D:\DOWNLOADS\UIPATH SAMPLES\AutomationChallenge1\AutomationChallenge1' is not a working copy
+   at SharpSvn.SvnClientArgs.HandleResult(SvnClientContext client, SvnException error, Object targets)
+   at SharpSvn.SvnClientArgs.HandleResult(SvnClientContext client, svn_error_t* error, Object targets)
+   at SharpSvn.SvnClient.Status(String path, SvnStatusArgs args, EventHandler`1 statusHandler)
+   at SharpSvn.SvnClient.GetStatus(String path, SvnStatusArgs args, Collection`1& statuses)
+   at UiPath.Project.SourceControl.SVNSourceControl.<>c__DisplayClass53_1.<GetSvnStatus>b__0()
+   at UiPath.Project.SourceControl.SVNSourceControl.SVNClientAction(Func`1 action)
+   at UiPath.Project.SourceControl.SVNSourceControl.GetSvnStatus(String path)

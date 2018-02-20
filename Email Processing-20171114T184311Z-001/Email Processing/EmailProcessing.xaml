@@ -1,0 +1,216 @@
+﻿<Activity mc:Ignorable="sads sap sap2010" x:Class="Email_Processing" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="Email_Processing_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:s4="clr-namespace:System;assembly=System.ComponentModel.Composition"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System"
+ xmlns:si="clr-namespace:System.IO;assembly=mscorlib"
+ xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
+ xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation"
+ xmlns:snm="clr-namespace:System.Net.Mail;assembly=System"
+ xmlns:sx="clr-namespace:System.Xml;assembly=System.Xml"
+ xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Xml.Linq"
+ xmlns:ua="clr-namespace:UiPath.Activities;assembly=UiPath.Activities"
+ xmlns:ul="clr-namespace:UiPath.Library;assembly=UiPath.Library"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>System.Windows.Controls</x:String>
+      <x:String>System.Windows.Documents</x:String>
+      <x:String>System.Windows.Shapes</x:String>
+      <x:String>System.Windows.Shell</x:String>
+      <x:String>System.Windows.Navigation</x:String>
+      <x:String>System.Windows.Data</x:String>
+      <x:String>System.Windows</x:String>
+      <x:String>System.Windows.Controls.Primitives</x:String>
+      <x:String>System.Windows.Media.Animation</x:String>
+      <x:String>System.Windows.Input</x:String>
+      <x:String>System.Windows.Media</x:String>
+      <x:String>System.Windows.Media.Media3D</x:String>
+      <x:String>System.Windows.Ink</x:String>
+      <x:String>System.Windows.Media.TextFormatting</x:String>
+      <x:String>System.Windows.Media.Effects</x:String>
+      <x:String>System.Windows.Media.Imaging</x:String>
+      <x:String>System.Windows.Automation</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities.Debugger.Symbol</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Management.Automation</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Activities</x:String>
+      <x:String>UiPath.Library</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Management.Automation</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Library</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart DisplayName="Main" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_1">
+        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="mailMessage" />
+          </Sequence.Variables>
+          <ua:Comment sap2010:WorkflowViewState.IdRef="Comment_1" Text="Scenario description : &#xA; Get all unread e-mails and redirect them based on their subject.&#xA;&#xA;The sample above sends e-mails with subject &quot;Andra&quot; to ciorici.andra@gmail.com.&#xA;e-mails with subject &quot;Ionut&quot; to ionut@deskover.com and e-mails with subject &quot;Lavinia&quot; &#xA;to &quot;Lavinia@deskover.com&quot;&#xA;&#xA;Trigger this workflow every time you receive an e-mail&#xA;&#xA;&#xA;" />
+          <Sequence DisplayName="Read Gmail" sap2010:WorkflowViewState.IdRef="Sequence_3" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="listGetGmail" />
+              <Variable x:TypeArguments="x:String" Default="email here" Name="emailSender" />
+              <Variable x:TypeArguments="x:String" Default="password here" Name="emailPassword" />
+            </Sequence.Variables>
+            <ua:GetMail DeleteMessages="False" DisplayName="Get mail" Email="kamerek@o2.pl" EnableSSL="True" sap2010:WorkflowViewState.IdRef="GetMail_1" MarkAsRead="True" Messages="[listGetGmail]" OnlyUnreadMessages="False" Password="Kochas001!" Port="993" Protocol="IMAP" Server="poczta.o2.pl" Top="10" />
+            <If Condition="[Not listGetGmail is Nothing]" sap2010:WorkflowViewState.IdRef="If_4">
+              <If.Then>
+                <ua:ForEach x:TypeArguments="snm:MailMessage" DisplayName="For each mail message" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[listGetGmail]">
+                  <ActivityAction x:TypeArguments="snm:MailMessage">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <WriteLine DisplayName="Write line" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[item.Subject]" />
+                      <ua:CommentOut DisplayName="Comment out" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                        <ua:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                            <ua:SaveEmailAttachments FolderPath="{x:Null}" DisplayName="Save email attachments" sap2010:WorkflowViewState.IdRef="SaveEmailAttachments_1" Message="[item]" />
+                          </Sequence>
+                        </ua:CommentOut.Body>
+                      </ua:CommentOut>
+                      <If Condition="[item.Subject.Contains(&quot;Andra&quot;)]" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If.Then>
+                          <ua:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[item.Body]" DisplayName="Send Email by Gmail" Email="kamerek@o2.pl" EnableSSL="True" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" OutgoingServer="poczta.o2.pl" Password="Kochas001!" Port="465" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" Subject="[item.Subject]" To="jkamirski@gmail.com">
+                            <ua:SendMail.Attachments>
+                              <scg:List x:TypeArguments="x:String" Capacity="0" />
+                            </ua:SendMail.Attachments>
+                          </ua:SendMail>
+                        </If.Then>
+                        <If.Else>
+                          <ua:SendMail Bcc="{x:Null}" Cc="{x:Null}" From="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="[item.Body]" DisplayName="Send Email by Gmail" Email="kamerek@o2.pl" EnableSSL="True" sap2010:WorkflowViewState.IdRef="SendMail_4" IsBodyHtml="False" OutgoingServer="poczta.o2.pl" Password="Kochas001!" Port="465" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" Subject="[item.Subject+&quot;else&quot;]" To="jkamirski@gmail.com">
+                            <ua:SendMail.Attachments>
+                              <scg:List x:TypeArguments="x:String" Capacity="0" />
+                            </ua:SendMail.Attachments>
+                          </ua:SendMail>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ActivityAction>
+                </ua:ForEach>
+              </If.Then>
+            </If>
+          </Sequence>
+        </Sequence>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <sads:DebugSymbol.Symbol>d2xEOlxCPT09PUFDS1VQIDMxMTAyMDE3XGRvd25sb2Fkc1xFbWFpbCBQcm9jZXNzaW5nLTIwMTcxMTE0VDE4NDMxMVotMDAxXEVtYWlsIFByb2Nlc3NpbmdcRW1haWxQcm9jZXNzaW5nLnhhbWwnYAOaAQ8CAQFjCZUBFAIBAmcLZ/MDAgEwaAuUARYCAQNrPGtIAgEFbDxsSwIBBG4NbrMCAgEobw2TARICAQZurAJusAICAS9uTW5cAgEubvwBboECAgEtbrUBbsUBAgErbpkCbqcCAgEqbuoBbvYBAgEpbxtvOgIBB3ERkQEeAgEJcZgBcagBAgEmdhWPASACAQp3F3eBAQIBI3gXficCASJ/F44BHAIBC3dud34CASR/JX9RAgEMgQEbhQEpAgEYiAEbjAEpAgEOgQHVA4EB6gMCASGBAaUCgQGzAgIBIIEBf4EBjAECAR6BAcEDgQHRAwIBHIEBtQGBAcQBAgEbgQHPAoEB1AICARqBAb0CgQHJAgIBGYgB5gOIAfsDAgEXiAGlAogBswICARaIAX+IAYwBAgEUiAHBA4gB4gMCARKIAbUBiAHEAQIBEYgBzwKIAdQCAgEQiAG9AogByQICAQ8=</sads:DebugSymbol.Symbol>
+  </Flowchart>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Comment_1" sap:VirtualizedContainerService.HintSize="1340.8,248.8" />
+      <sap2010:ViewStateData Id="GetMail_1" sap:VirtualizedContainerService.HintSize="1318.4,22.4" />
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="653.6,62.4" />
+      <sap2010:ViewStateData Id="SaveEmailAttachments_1" sap:VirtualizedContainerService.HintSize="200,22.4" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="222.4,147.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="CommentOut_1" sap:VirtualizedContainerService.HintSize="653.6,225.6" />
+      <sap2010:ViewStateData Id="SendMail_1" sap:VirtualizedContainerService.HintSize="314.4,146.4" />
+      <sap2010:ViewStateData Id="SendMail_4" sap:VirtualizedContainerService.HintSize="314.4,146.4" />
+      <sap2010:ViewStateData Id="If_3" sap:VirtualizedContainerService.HintSize="653.6,296" />
+      <sap2010:ViewStateData Id="Sequence_2" sap:VirtualizedContainerService.HintSize="676,788.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ForEach`1_1" sap:VirtualizedContainerService.HintSize="706.4,937.6" />
+      <sap2010:ViewStateData Id="If_4" sap:VirtualizedContainerService.HintSize="1318.4,1386.4" />
+      <sap2010:ViewStateData Id="Sequence_3" sap:VirtualizedContainerService.HintSize="1340.8,1573.6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="1363.2,1987.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,124.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,52.8</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="614.4,636.8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75.2</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,124.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Email_Processing_1" sap:VirtualizedContainerService.HintSize="654.4,716.8" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

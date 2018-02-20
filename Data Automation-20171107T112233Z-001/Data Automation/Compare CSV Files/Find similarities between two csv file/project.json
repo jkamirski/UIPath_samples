@@ -1,0 +1,8 @@
+{
+  "Description": "Workflow Project",
+  "Version": "1.0.0.0",
+  "MainWorkflow": "Main.xaml",
+  "Id": "Find similarities and differences between two csv file beta",
+  "Dependencies": {},
+  "ConfigurationOptions": {}
+}

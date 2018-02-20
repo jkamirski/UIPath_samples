@@ -1,0 +1,8 @@
+{
+  "Description": "Workflow Project",
+  "Version": "1.0.0.0",
+  "MainWorkflow": "Main.xaml",
+  "Id": "Compare Rows From Different Tables Beta",
+  "Dependencies": {},
+  "ConfigurationOptions": {}
+}
