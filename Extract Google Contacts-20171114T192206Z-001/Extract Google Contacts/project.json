@@ -1,0 +1,14 @@
+{
+  "name": "Extract Google Contacts",
+  "description": "Project",
+  "main": "D:\\B====ACKUP 31102017\\downloads\\Extract Google Contacts-20171114T192206Z-001\\Extract Google Contacts\\ExtractGoogleContacts.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "17.1.6435.21855",
+  "projectVersion": "1.0.6529.32366",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

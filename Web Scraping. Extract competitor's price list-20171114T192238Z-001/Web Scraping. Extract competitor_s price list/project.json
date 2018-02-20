@@ -1,0 +1,14 @@
+{
+  "name": "Web Scraping. Extract competitor_s price list",
+  "description": "Project",
+  "main": "D:\\B====ACKUP 31102017\\downloads\\Web Scraping. Extract competitor's price list-20171114T192238Z-001\\Web Scraping. Extract competitor_s price list\\ExtractCompetitor_sPriceList.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "17.1.6435.21855",
+  "projectVersion": "1.0.6529.18148",
+  "packOptions": {},
+  "runtimeOptions": {}
+}

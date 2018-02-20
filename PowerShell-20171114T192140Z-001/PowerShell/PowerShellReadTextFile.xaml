@@ -1,0 +1,113 @@
+﻿<Activity mc:Ignorable="sads sap" x:Class="ReadTextFile" sap:VirtualizedContainerService.HintSize="654,676" mva:VisualBasic.Settings="Assembly references and imported namespaces for internal implementation"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=Microsoft.VisualBasic"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:s1="clr-namespace:System;assembly=System"
+ xmlns:s2="clr-namespace:System;assembly=System.Core"
+ xmlns:s3="clr-namespace:System;assembly=System.ServiceModel"
+ xmlns:s4="clr-namespace:System;assembly=System.ComponentModel.Composition"
+ xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.Collections;assembly=mscorlib"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sco1="clr-namespace:System.Collections.ObjectModel;assembly=System"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:sd1="clr-namespace:System.Diagnostics;assembly=System"
+ xmlns:si="clr-namespace:System.IO;assembly=mscorlib"
+ xmlns:sl="clr-namespace:System.Linq;assembly=System.Core"
+ xmlns:sma="clr-namespace:System.Management.Automation;assembly=System.Management.Automation"
+ xmlns:snm="clr-namespace:System.Net.Mail;assembly=System"
+ xmlns:sx="clr-namespace:System.Xml;assembly=System.Xml"
+ xmlns:sxl="clr-namespace:System.Xml.Linq;assembly=System.Xml.Linq"
+ xmlns:ua="clr-namespace:UiPath.Activities;assembly=UiPath.Activities"
+ xmlns:ul="clr-namespace:UiPath.Library;assembly=UiPath.Library"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Flowchart DisplayName="Main" sap:VirtualizedContainerService.HintSize="614,636">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="x:String" Name="selectedDirectoryPath" />
+      <Variable x:TypeArguments="sco:Collection(si:FileInfo)" Name="files" />
+      <Variable x:TypeArguments="sco:Collection(x:String)" Name="contents" />
+      <Variable x:TypeArguments="x:String" Name="stringMessageBox11" />
+    </Flowchart.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+        <av:Size x:Key="ShapeSize">60,75</av:Size>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,124.5</av:PointCollection>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID1">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,124.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,175.5 300,214.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ua:WriteTextFile ContinueOnError="{x:Null}" DesignerSelector="{x:Null}" ElementPosition="{x:Null}" InformativeScreenshot="{x:Null}" DisplayName="Write text file" FileName="Example.txt" sap:VirtualizedContainerService.HintSize="200,51" Text="PoweShell is awesome!">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ua:WriteTextFile>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID0">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <av:Point x:Key="ShapeLocation">200,214.5</av:Point>
+                <av:Size x:Key="ShapeSize">200,51</av:Size>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence sap:VirtualizedContainerService.HintSize="200,51">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ua:Comment sap:VirtualizedContainerService.HintSize="366,227" Text="Using Invoke PowerShell we get all the  TXT files from the current directory (which should be the workspace of the workflow)&#xD;&#xA;&#xD;&#xA;We use the *get-childItem* command and we set the filter parameter to only include files that end with **.txt**&#xD;&#xA;&#xD;&#xA;Parameters are set by adding them in the *Parameters* collection&#xD;&#xA;" />
+              <ua:InvokePowerShell x:TypeArguments="si:FileInfo" ContinueOnError="{x:Null}" CommandText="Get-ChildItem" DisplayName="Get Directory Files" sap:VirtualizedContainerService.HintSize="366,59" Output="[files]">
+                <ua:InvokePowerShell.Parameters>
+                  <InArgument x:TypeArguments="x:Boolean" x:Key="Recurse">False</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="filter">*.txt</InArgument>
+                </ua:InvokePowerShell.Parameters>
+              </ua:InvokePowerShell>
+              <ua:Comment sap:VirtualizedContainerService.HintSize="366,112" Text="The result is a collection of *FileInfo* (it was changed by using the TypeArgument property from Collection of PSObject to Collection of FileInfo)." />
+              <ua:ForEach x:TypeArguments="si:FileInfo" DisplayName="For each&lt;file info&gt;" sap:VirtualizedContainerService.HintSize="366,504" Values="[files]">
+                <ActivityAction x:TypeArguments="si:FileInfo">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="si:FileInfo" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="336,396">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ua:Comment sap:VirtualizedContainerService.HintSize="314,74" Text="// We use PowerShell to get the text from each file" />
+                    <ua:InvokePowerShell x:TypeArguments="x:String" ContinueOnError="{x:Null}" CommandText="Get-Content" DisplayName="Invoke power shell&lt;string&gt;" sap:VirtualizedContainerService.HintSize="314,59" Output="[contents]">
+                      <ua:InvokePowerShell.Parameters>
+                        <InArgument x:TypeArguments="x:String" x:Key="Path">[item.FullName]</InArgument>
+                      </ua:InvokePowerShell.Parameters>
+                    </ua:InvokePowerShell>
+                    <ua:MessageBox Caption="{x:Null}" ContinueOnError="{x:Null}" DesignerSelector="{x:Null}" ElementPosition="{x:Null}" InformativeScreenshot="{x:Null}" AlwaysOnTop="True" Buttons="Ok" ChosenButton="[stringMessageBox11]" DisplayName="Message box" sap:VirtualizedContainerService.HintSize="314,59" Text="[contents(0).ToString]" />
+                  </Sequence>
+                </ActivityAction>
+              </ua:ForEach>
+            </Sequence>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID1</x:Reference>
+  </Flowchart>
+</Activity>

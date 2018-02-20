@@ -1,0 +1,12 @@
+{
+  "description": "Blank Project",
+  "version": "2016.2.6274.33252",
+  "main": "Main.xaml",
+  "id": "example_web_recording",
+  "dependencies": {},
+  "configurationOptions": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ]
+}

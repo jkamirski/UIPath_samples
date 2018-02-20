@@ -1,0 +1,12 @@
+{
+  "description": "Blank Project",
+  "version": "1.0.0.0",
+  "main": "Main.xaml",
+  "id": "ExternalDll",
+  "dependencies": {},
+  "configurationOptions": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ]
+}

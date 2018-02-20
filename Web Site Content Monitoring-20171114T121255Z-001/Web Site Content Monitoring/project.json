@@ -1,0 +1,14 @@
+{
+  "name": "Web Site Content Monitoring",
+  "description": "Project",
+  "main": "D:\\B====ACKUP 31102017\\downloads\\Web Site Content Monitoring-20171114T121255Z-001\\Web Site Content Monitoring\\emailGoly.xaml",
+  "dependencies": {},
+  "excludedData": [
+    "Private:*",
+    "*password*"
+  ],
+  "toolVersion": "17.1.6435.21855",
+  "projectVersion": "1.0.6529.20516",
+  "packOptions": {},
+  "runtimeOptions": {}
+}
